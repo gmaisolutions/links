@@ -1,0 +1,119 @@
+/* Reutilizamos las variables de tu web principal para mantener la consistencia */
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #007bff;
+    --text-dark: #333;
+    --bg-light: #ffffff;
+    --bg-faded: #f8f9fa;
+    --border-color: #e0e0e0;
+    --shadow-light: rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-faded);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.links-container {
+    max-width: 680px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Cabecera con foto y nombre */
+.profile-header {
+    margin-bottom: 40px;
+}
+
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 4px 20px var(--shadow-light);
+    margin-bottom: 20px;
+}
+
+.profile-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5em;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.profile-tagline {
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* Grid de Enlaces */
+.links-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.link-card {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    box-shadow: 0 5px 15px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    
+    /* Preparamos para la animación de entrada */
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.link-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    background-color: #e6f2ff; /* Un azul muy claro al pasar el ratón */
+    color: var(--primary-color);
+}
+
+.link-icon {
+    font-size: 1.5em;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.link-card:hover .link-icon {
+    color: var(--primary-color);
+}
+
+/* Footer */
+.links-footer {
+    margin-top: 50px;
+    color: #999;
+    font-size: 0.9em;
+}
+
+/* Animación de entrada para los links */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
